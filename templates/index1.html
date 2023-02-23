@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Excel Search</title>
+    <style>
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      form {
+        text-align: center;
+        margin-top: 50px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+      }
+      th, td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/" method="post">
+        <input type="text" name="keyword" placeholder="Search keyword">
+        <input type="submit" value="Search">
+      </form>
+      {% if keyword %}
+        <h2>Results for "{{ keyword }}":</h2>
+        {{ query|safe }}
+      {% endif %}
+    </div>
+  </body>
+</html>
